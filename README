@@ -1,0 +1,19 @@
+This is a project in progress. 
+
+The conacts.txt file is in the form...
+
+////////FILE START///////
+Name: John Doe
+Number: 1234567890
+Email: jDoe@gmail.com
+
+Name: Jane Doe
+Number: 0987654321
+Email: janeDoe@gmail.com
+//////FILE END//////////
+
+Current Functionality:
+- Print out entire contacts list
+- Search for a name (user input would be first, or last name)
+- Print out all contacts with certain area code (currently bugged as of 8/12/16)
+- quit
