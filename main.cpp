@@ -13,8 +13,6 @@ void printMenu() {
          << "s: Search for a contact" << endl
          << "c: Search for all contacts with a specific area code" << endl
          << "q: Quit" << endl;
-
-
 }
 
 int main() {
@@ -50,8 +48,6 @@ int main() {
                 cout << "Please enter a valid option. Thank you!" << endl;
                 continue;
         }
-
     }
-
     return 0;
 }
