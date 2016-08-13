@@ -36,11 +36,6 @@ public:
     void lookUpName();
     void printList(vector<contact*> &contactList);
     void getArea(); // gets all contacts with given area code
-
-
-
-
 };
-
 
 #endif //CONTACTDIRECTORY_HASH_H
