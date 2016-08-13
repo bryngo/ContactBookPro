@@ -4,18 +4,9 @@
 
 #include <iostream>
 #include <vector>
-#include "Hash.h"
-
-using namespace std;
-
-//
-// Created by Bryan Ngo on 8/5/16.
-//
-//
-// Format of file is Name:--> Number:--> Email:--> EmptyLine
-
-#include <iostream>
 #include <fstream>
+
+#include "Hash.h"
 
 using namespace std;
 
@@ -28,7 +19,6 @@ Hash::Hash() {
         HashTable[i]->email = "empty";
         HashTable[i]->next = NULL;
     }
-
 }
 
 void Hash::getArea() {
@@ -58,9 +48,8 @@ void Hash::getArea() {
         }
     }
 
-   // printList(contactList);
-
-} //
+printList(contactList);
+} // get's all contacts with matching area code [BUGGED 8/12/16]
 
 void Hash::printList(vector<contact*> &contactList) {
 
@@ -71,13 +60,11 @@ void Hash::printList(vector<contact*> &contactList) {
         cout << "Number: " << contactList.at(i)->number << endl;
         cout << "Email: " << contactList.at(i)->email << '\n' << endl;
     }
-
 } // helper function used to print out all founded results
 
 void Hash::lookUpName() {
 
     string name;
-
     vector<contact*> contactsList;
 
     cout << "Please enter the first, last, or full name: ";
@@ -97,7 +84,6 @@ void Hash::lookUpName() {
     }
 
     printList(contactsList);
-
 }
 
 void Hash::displayAll() {
@@ -132,7 +118,6 @@ void Hash::addContact(contact *temp, int index) {
         } // find the end of the list
         ptr->next = temp;
     }
-
 } // adds a contact to the list
 
 int Hash::getHash(string name) {
