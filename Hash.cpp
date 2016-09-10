@@ -1,6 +1,6 @@
 //
 // Created by Bryan Ngo on 8/5/16.
-//
+// comment
 
 #include <iostream>
 #include <vector>
@@ -17,39 +17,41 @@ Hash::Hash() {
         HashTable[i]->name = "empty";
         HashTable[i]->number = "empty";
         HashTable[i]->email = "empty";
-        HashTable[i]->next = NULL;
+        HashTable[i]->next = 0;
     }
+
 }
 
 void Hash::getArea() {
     string areaCode;
     string areaCodeCurr;
-    cout << "Please enter the area code: " << endl;
+
+    cout << "Please enter the area code: ";
     cin >> areaCode;
 
     vector<contact*> contactList;
 
     for(int i = 0; i < tableSize; i++) {
-        if(HashTable[i]->name == "empty")
+        if(!(HashTable[i]->name).compare("empty")) {
             continue;
-        else {
-            for(contact *ptr = HashTable[i]; ptr; ptr = ptr->next) {
-                areaCodeCurr += HashTable[i]->number.at(0);
-                areaCodeCurr += HashTable[i]->number.at(1);
-                areaCodeCurr += HashTable[i]->number.at(2);
+        } else {
+            for(contact* ptr = HashTable[i]; ptr; ptr = ptr->next) {
+                areaCodeCurr.clear();
+                areaCodeCurr += ptr->number.at(0);
+                areaCodeCurr += ptr->number.at(1);
+                areaCodeCurr += ptr->number.at(2);
 
-                cout << "Comparing " << areaCodeCurr << " and " << areaCode << endl;
-
-                if(!areaCode.compare(areaCodeCurr)) {
+                // do the area codes match?
+                if(!areaCode.compare(string(areaCodeCurr)))
                     contactList.push_back(ptr);
-                } // do the area codes match?
-                areaCodeCurr.erase();
+
             }
         }
     }
 
-printList(contactList);
-} // get's all contacts with matching area code [BUGGED 8/12/16]
+    printList(contactList);
+
+}
 
 void Hash::printList(vector<contact*> &contactList) {
 
@@ -60,11 +62,13 @@ void Hash::printList(vector<contact*> &contactList) {
         cout << "Number: " << contactList.at(i)->number << endl;
         cout << "Email: " << contactList.at(i)->email << '\n' << endl;
     }
+
 } // helper function used to print out all founded results
 
 void Hash::lookUpName() {
 
     string name;
+
     vector<contact*> contactsList;
 
     cout << "Please enter the first, last, or full name: ";
@@ -84,6 +88,7 @@ void Hash::lookUpName() {
     }
 
     printList(contactsList);
+
 }
 
 void Hash::displayAll() {
@@ -118,6 +123,7 @@ void Hash::addContact(contact *temp, int index) {
         } // find the end of the list
         ptr->next = temp;
     }
+
 } // adds a contact to the list
 
 int Hash::getHash(string name) {
@@ -156,6 +162,9 @@ void Hash::read(string filename) {
 
         curr->email = parseLine(buffer);
         getline(file, buffer); //get past the empty line
+
+        curr->next = 0;
+
         addContact(curr, index);
     }
 } // read in the file
