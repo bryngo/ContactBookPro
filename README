@@ -14,6 +14,6 @@ Email: janeDoe@gmail.com
 
 Current Functionality:
 - Print out entire contacts list
-- Search for a name (user input would be first, or last name)
-- Print out all contacts with certain area code (currently bugged as of 8/12/16)
+- Search for a name (user input would be first, last, or full name)
+- Print out all contacts with certain area code 
 - quit
