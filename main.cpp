@@ -13,22 +13,32 @@ void printMenu() {
          << "s: Search for a contact" << endl
          << "c: Search for all contacts with a specific area code" << endl
          << "q: Quit" << endl;
+
+
+}
+
+void printError() {
+
+    cout << "\n" << "///////////////////////////////////////////////////////////////////" << endl <<
+                    "==//ERROR//== Please enter a valid option. Thank you! ==//ERROR//==" << endl <<
+                    "///////////////////////////////////////////////////////////////////" << "\n\n";
 }
 
 int main() {
 
     Hash hash;
-    hash.read("/Users/Bryan1/ClionProjects/ContactDirectory/contacts.txt");
+    hash.read("/Users/Bryan1/Projects/ClionProjects/ContactDirectory/contactsREAL.txt");
     string input;
     bool stay = true;
 
     while(stay) {
 
         printMenu();
-        getline(cin, input);
+        cin >> input;
+        cin.ignore();
 
         if(input.length() > 1) {
-            cout << "Please enter a single character input" << endl;
+            printError();
             continue;
         }
 
@@ -44,10 +54,13 @@ int main() {
                 continue;
             case 'q' :
                 stay = false;
+                break;
             default:
-                cout << "Please enter a valid option. Thank you!" << endl;
+                printError();
                 continue;
         }
+
     }
+
     return 0;
 }
