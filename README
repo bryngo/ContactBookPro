@@ -1,5 +1,5 @@
-# Conacts Book Pro
-<p>
+Conacts Book Pro
+
 This is a project in progress. 
 
 The conacts.txt file is in the form...
@@ -21,4 +21,3 @@ Current Functionality:
 - Search for a name (user input would be first, last, or full name)
 - Print out all contacts with certain area code 
 - quit
-</p>
