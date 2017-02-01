@@ -1,7 +1,6 @@
 # Conacts Book Pro
 
-This is a project in progress. 
-
+# IMPORTANT! This project has been abandoned. 
 The conacts.txt file is in the form...
 
 There are currently only 3 names in contacts.txt (full list was left out for privacy reason). Feel free to add to the text file with your own contacts.
